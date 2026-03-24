@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { GraduationCap, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube, ArrowRight } from 'lucide-react';
 
 const Footer = () => {
   const quickLinks = [
@@ -18,15 +18,6 @@ const Footer = () => {
     'Career Counselling',
   ];
 
-  const destinations = [
-    { name: 'United Kingdom', flag: '🇬🇧' },
-    { name: 'United States', flag: '🇺🇸' },
-    { name: 'Canada', flag: '🇨🇦' },
-    { name: 'Australia', flag: '🇦🇺' },
-    { name: 'Germany', flag: '🇩🇪' },
-    { name: 'Ireland', flag: '🇮🇪' },
-  ];
-
   return (
     <footer className="bg-gray-900 text-gray-300">
       {/* Main Footer */}
@@ -35,16 +26,20 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="bg-gradient-to-r from-blue-500 to-indigo-500 p-2 rounded-lg">
-                <GraduationCap className="h-8 w-8 text-white" />
-              </div>
-              <div>
-                <span className="text-2xl font-bold text-white">NWC</span>
-                <p className="text-xs text-gray-400 -mt-1">Education Consultancy</p>
+              <img
+                src="/logo.png"
+                alt="EduQuest Consultancy"
+                className="h-14 w-auto object-contain brightness-200"
+              />
+              <div className="flex flex-col -space-y-1">
+                <span className="text-2xl font-bold text-white leading-none">
+                  Edu<span className="font-extrabold text-blue-400">Quest</span>
+                </span>
+                <p className="text-[11px] text-gray-400 font-semibold tracking-[0.1em] uppercase">Consultancy</p>
               </div>
             </Link>
             <p className="text-gray-400 leading-relaxed">
-              Your trusted partner for international education. We help students achieve their dreams of studying abroad with personalized guidance and support.
+              Your trusted partner for UK university admissions. We help students from South Asia and Africa achieve their dreams of studying in the UK with personalised, free guidance and support.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="bg-gray-800 p-2 rounded-lg hover:bg-blue-600 transition-colors">
@@ -104,37 +99,44 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-blue-500 mt-1 flex-shrink-0" />
-                <span className="text-gray-400">
-                  123 Education Lane<br />
-                  London, EC1A 1BB<br />
-                  United Kingdom
-                </span>
+                <div>
+                  <p className="text-xs text-blue-400 font-semibold uppercase mb-1">🇬🇧 London Office</p>
+                  <span className="text-gray-400">
+                    53 Harts Lane<br />
+                    Barking, London<br />
+                    IG11 8NA
+                  </span>
+                </div>
+              </li>
+              <li className="flex items-start space-x-3">
+                <MapPin className="h-5 w-5 text-blue-500 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-xs text-blue-400 font-semibold uppercase mb-1">🇧🇩 Bangladesh Office</p>
+                  <span className="text-gray-400">
+                    20/6, West Panthapath<br />
+                    Level-5, Dhaka-1205<br />
+                    Bangladesh
+                  </span>
+                </div>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-blue-500 flex-shrink-0" />
-                <a href="tel:+442012345678" className="text-gray-400 hover:text-white transition-colors">
-                  +44 20 1234 5678
-                </a>
+                <div>
+                  <a href="tel:+447875109928" className="text-gray-400 hover:text-white transition-colors block">
+                    +44 7875 109928 (UK)
+                  </a>
+                  <a href="tel:+8801335845976" className="text-gray-400 hover:text-white transition-colors block">
+                    +880 1335845976 (BD)
+                  </a>
+                </div>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-blue-500 flex-shrink-0" />
-                <a href="mailto:info@nwceducation.com" className="text-gray-400 hover:text-white transition-colors">
-                  info@nwceducation.com
+                <a href="mailto:info@eduquestconsultancy.co.uk" className="text-gray-400 hover:text-white transition-colors">
+                  info@eduquestconsultancy.co.uk
                 </a>
               </li>
             </ul>
-
-            {/* Study Destinations */}
-            <div className="mt-8">
-              <h4 className="text-white text-sm font-semibold mb-4">Popular Destinations</h4>
-              <div className="flex flex-wrap gap-2">
-                {destinations.map((dest) => (
-                  <span key={dest.name} className="text-sm bg-gray-800 px-3 py-1 rounded-full">
-                    {dest.flag} {dest.name.split(' ')[0]}
-                  </span>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -142,10 +144,21 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} NWC Education Consultancy. All rights reserved.
-            </p>
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-center md:text-left">
+            <div className="flex flex-col md:flex-row items-center gap-1 md:gap-4">
+              <p className="text-gray-500 text-sm">
+                © {new Date().getFullYear()} EduQuest Consultancy. All rights reserved.
+              </p>
+              <span className="hidden md:inline text-gray-700">|</span>
+              <a 
+                href="https://www.esyai.co.uk" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-blue-400 transition-colors text-sm font-medium"
+              >
+                Made by EsyAI
+              </a>
+            </div>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
               <a href="#" className="text-gray-500 hover:text-white transition-colors">Terms of Service</a>

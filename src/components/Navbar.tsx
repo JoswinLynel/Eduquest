@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, GraduationCap, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [destinationsOpen, setDestinationsOpen] = useState(false);
   const location = useLocation();
 
   const navLinks = [
@@ -23,14 +22,16 @@ const Navbar = () => {
         <div className="flex justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-2 rounded-lg">
-                <GraduationCap className="h-8 w-8 text-white" />
-              </div>
-              <div>
-                <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                  NWC
+              <img
+                src="/logo.png"
+                alt="EduQuest Consultancy"
+                className="h-16 w-auto object-contain"
+              />
+              <div className="flex flex-col -space-y-1">
+                <span className="text-3xl font-bold text-blue-900 leading-none tracking-tight">
+                  Edu<span className="font-extrabold text-blue-600">Quest</span>
                 </span>
-                <p className="text-xs text-gray-500 -mt-1">Education Consultancy</p>
+                <p className="text-[13px] text-gray-500 font-semibold tracking-[0.1em] uppercase">Consultancy</p>
               </div>
             </Link>
           </div>

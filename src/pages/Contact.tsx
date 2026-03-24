@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import {
-  Mail, Phone, MapPin, Clock, Send, CheckCircle,
-  MessageSquare, Globe, Calendar, ArrowRight, Sparkles
+  Mail, Phone, MapPin, Send, CheckCircle,
+  MessageSquare, Calendar, ArrowRight, Sparkles
 } from 'lucide-react';
+import { Reveal } from '../components/Reveal';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -44,23 +45,23 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <MapPin className="h-6 w-6" />,
-      title: 'Visit Us',
-      details: ['123 Education Lane', 'London, EC1A 1BB', 'United Kingdom'],
+      title: '🇬🇧 London Office',
+      details: ['53 Harts Lane', 'Barking, London IG11 8NA', 'United Kingdom'],
+    },
+    {
+      icon: <MapPin className="h-6 w-6" />,
+      title: '🇧🇩 Bangladesh Office',
+      details: ['20/6, West Panthapath, Level-5', 'Dhaka-1205', 'Bangladesh'],
     },
     {
       icon: <Phone className="h-6 w-6" />,
       title: 'Call Us',
-      details: ['+44 20 1234 5678', '+44 20 1234 5679', 'Mon-Fri: 9am-6pm'],
+      details: ['+44 7875 109928 (UK)', '+880 1335845976 (BD)', 'Mon-Fri: 9am-6pm'],
     },
     {
       icon: <Mail className="h-6 w-6" />,
       title: 'Email Us',
-      details: ['info@nwceducation.com', 'admissions@nwceducation.com', 'support@nwceducation.com'],
-    },
-    {
-      icon: <Clock className="h-6 w-6" />,
-      title: 'Office Hours',
-      details: ['Monday - Friday: 9am - 6pm', 'Saturday: 10am - 4pm', 'Sunday: Closed'],
+      details: ['info@eduquestconsultancy.co.uk'],
     },
   ];
 
@@ -120,17 +121,19 @@ const Contact = () => {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm text-white mb-6">
-            <MessageSquare className="h-4 w-4 mr-2 text-yellow-400" />
-            Free Consultation Available
-          </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-            Start Your Journey
-            <span className="text-yellow-400"> Today</span>
-          </h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Book a free consultation with our expert counsellors. We're here to answer all your questions and guide you towards your dream university.
-          </p>
+          <Reveal direction="up">
+            <span className="inline-flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm text-white mb-6">
+              <MessageSquare className="h-4 w-4 mr-2 text-yellow-400" />
+              Free Consultation Available
+            </span>
+            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+              Start Your Journey
+              <span className="text-yellow-400"> Today</span>
+            </h1>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+              Book a free consultation with our expert counsellors. We're here to answer all your questions and guide you towards your dream university.
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -139,8 +142,8 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Contact Form */}
-            <div className="lg:col-span-2">
-              <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg">
+            <Reveal direction="right" className="lg:col-span-2">
+              <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg h-full">
                 <div className="mb-8">
                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
                     Book Your Free Consultation
@@ -302,24 +305,26 @@ const Contact = () => {
                   </form>
                 )}
               </div>
-            </div>
+            </Reveal>
 
             {/* Contact Information */}
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
-                <div key={index} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 flex-shrink-0">
-                      {info.icon}
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-2">{info.title}</h3>
-                      {info.details.map((detail, idx) => (
-                        <p key={idx} className="text-gray-600 text-sm">{detail}</p>
-                      ))}
+                <Reveal key={index} direction="left" delay={(index * 100) as any}>
+                  <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all h-full">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 flex-shrink-0">
+                        {info.icon}
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-2">{info.title}</h3>
+                        {info.details.map((detail, idx) => (
+                          <p key={idx} className="text-gray-600 text-sm">{detail}</p>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Reveal>
               ))}
 
               {/* Quick Contact CTA */}
@@ -382,8 +387,8 @@ const Contact = () => {
             <div className="aspect-video bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center">
               <div className="text-center">
                 <MapPin className="h-16 w-16 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-gray-900">NWC Education Consultancy</h3>
-                <p className="text-gray-600">123 Education Lane, London, EC1A 1BB</p>
+                <h3 className="text-xl font-semibold text-gray-900">EduQuest Consultancy</h3>
+                <p className="text-gray-600">53 Harts Lane, Barking, London, IG11 8NA</p>
                 <a
                   href="https://maps.google.com"
                   target="_blank"
@@ -409,17 +414,17 @@ const Contact = () => {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
             {[
-              { city: 'London', country: 'United Kingdom', flag: '🇬🇧', type: 'Head Office' },
-              { city: 'Dubai', country: 'UAE', flag: '🇦🇪', type: 'Regional Office' },
-              { city: 'Mumbai', country: 'India', flag: '🇮🇳', type: 'Regional Office' },
-              { city: 'Lagos', country: 'Nigeria', flag: '🇳🇬', type: 'Regional Office' },
+              { city: 'London', country: 'United Kingdom', flag: '🇬🇧', type: 'Head Office', address: '53 Harts Lane, Barking, IG11 8NA', phone: '+44 7875 109928' },
+              { city: 'Dhaka', country: 'Bangladesh', flag: '🇧🇩', type: 'Regional Office', address: '20/6 West Panthapath, Level-5, Dhaka-1205', phone: '+880 1335845976' },
             ].map((office, index) => (
               <div key={index} className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
                 <span className="text-4xl mb-4 block">{office.flag}</span>
                 <h3 className="text-xl font-semibold text-gray-900">{office.city}</h3>
                 <p className="text-gray-600">{office.country}</p>
+                <p className="text-gray-500 text-sm mt-1">{office.address}</p>
+                <p className="text-blue-600 text-sm mt-1">{office.phone}</p>
                 <span className="inline-block mt-2 text-xs bg-blue-100 text-blue-600 px-3 py-1 rounded-full">
                   {office.type}
                 </span>

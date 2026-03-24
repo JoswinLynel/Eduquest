@@ -3,6 +3,7 @@ import {
   GraduationCap, Target, Eye, Heart, Award, Users, Globe, Building2,
   CheckCircle, ArrowRight, Sparkles, Shield, Clock, Handshake
 } from 'lucide-react';
+import { Reveal } from '../components/Reveal';
 
 const About = () => {
   const values = [
@@ -29,11 +30,11 @@ const About = () => {
   ];
 
   const milestones = [
-    { year: '2008', title: 'Founded', description: 'NWC Education was established with a vision to make international education accessible.' },
-    { year: '2012', title: 'UK Partnership', description: 'Became an official recruitment partner for top UK universities.' },
-    { year: '2016', title: 'Global Expansion', description: 'Expanded services to include USA, Canada, and Australia destinations.' },
-    { year: '2020', title: 'Digital Transformation', description: 'Launched virtual counselling services reaching students worldwide.' },
-    { year: '2024', title: '15,000+ Students', description: 'Celebrated placing over 15,000 students in universities globally.' },
+    { year: '2018', title: 'Founded', description: 'EduQuest Consultancy was established in London with a mission to simplify UK university admissions for international students.' },
+    { year: '2019', title: 'Bangladesh Office', description: 'Opened our Dhaka office to directly serve students across South Asia, particularly Bangladesh.' },
+    { year: '2020', title: 'Digital Counselling', description: 'Launched virtual counselling services, enabling students to receive expert guidance from anywhere.' },
+    { year: '2022', title: 'African Outreach', description: 'Extended our reach to Nigeria and Ghana, supporting students from West Africa in gaining UK university offers.' },
+    { year: '2024', title: 'Partner University Network', description: 'Grew our network of UK university partners to provide students with a wide range of course options.' },
   ];
 
   const team = [
@@ -81,19 +82,21 @@ const About = () => {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-white">
-              <span className="inline-flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm mb-6">
-                <Award className="h-4 w-4 mr-2 text-yellow-400" />
-                15+ Years of Excellence
-              </span>
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                Transforming Dreams into
-                <span className="text-yellow-400"> Academic Journeys</span>
-              </h1>
-              <p className="text-xl text-blue-100 leading-relaxed">
-                NWC Education Consultancy has been a trusted partner for international students, guiding them towards world-class educational opportunities since 2008.
-              </p>
-            </div>
+            <Reveal direction="right">
+              <div className="text-white">
+                <span className="inline-flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm mb-6">
+                  <Award className="h-4 w-4 mr-2 text-yellow-400" />
+                  UK Education Specialists
+                </span>
+                <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                  Transforming Dreams into
+                  <span className="text-yellow-400"> Academic Journeys</span>
+                </h1>
+                <p className="text-xl text-blue-100 leading-relaxed">
+                  EduQuest Consultancy is a UK-based international student recruitment agency, helping students from South Asia and Africa access world-class UK universities — completely free of charge.
+                </p>
+              </div>
+            </Reveal>
 
             <div className="hidden lg:block">
               <img
@@ -112,13 +115,15 @@ const About = () => {
           <div className="bg-white rounded-2xl shadow-xl p-8">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="inline-flex items-center justify-center w-14 h-14 bg-blue-50 rounded-xl text-blue-600 mb-3">
-                    {stat.icon}
+                <Reveal key={index} direction="up" delay={(index * 100) as any}>
+                  <div className="text-center">
+                    <div className="inline-flex items-center justify-center w-14 h-14 bg-blue-50 rounded-xl text-blue-600 mb-3">
+                      {stat.icon}
+                    </div>
+                    <div className="text-3xl font-bold text-gray-900">{stat.number}</div>
+                    <div className="text-gray-500 text-sm">{stat.label}</div>
                   </div>
-                  <div className="text-3xl font-bold text-gray-900">{stat.number}</div>
-                  <div className="text-gray-500 text-sm">{stat.label}</div>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -129,24 +134,26 @@ const About = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">Our Story</span>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-6">
-                A Legacy of
-                <span className="text-blue-600"> Empowering Students</span>
-              </h2>
-              <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>
-                  Founded in 2008, NWC Education Consultancy began with a simple mission: to make quality international education accessible to every deserving student. What started as a small team of passionate educators has grown into a leading consultancy with a global footprint.
-                </p>
-                <p>
-                  As an official recruitment partner for over 200 universities and colleges worldwide, we bridge the gap between ambitious students and world-renowned institutions. Our services are completely free for students, as we work on a commission basis with our partner institutions.
-                </p>
-                <p>
-                  Today, we take pride in having successfully placed over 15,000 students in prestigious universities across the United Kingdom, United States, Canada, Australia, and beyond. Each success story drives us to reach even more students and help them achieve their academic dreams.
-                </p>
+            <Reveal direction="right">
+              <div>
+                <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">Our Story</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-6">
+                  A Legacy of
+                  <span className="text-blue-600"> Empowering Students</span>
+                </h2>
+                <div className="space-y-4 text-gray-600 leading-relaxed">
+                  <p>
+                    EduQuest Consultancy was founded in London with a clear purpose: to simplify and demystify the process of gaining admission to a UK university for students who may lack the knowledge, language skills, or resources to navigate the system independently.
+                  </p>
+                  <p>
+                    We act as intermediaries between prospective international students — primarily from South Asia (Bangladesh, Pakistan, India) and Africa (Nigeria, Ghana) — and UK universities. Our services cover every stage of the study-abroad journey, from course and university selection through to application, visa support, and pre-departure guidance.
+                  </p>
+                  <p>
+                    Our services are completely free for students. We earn our revenue from commissions paid by our university partners, meaning there is never any cost to you. Our offices in London and Dhaka allow us to provide local, accessible support to students wherever they are.
+                  </p>
+                </div>
               </div>
-            </div>
+            </Reveal>
 
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-3xl blur-2xl opacity-20"></div>
@@ -164,25 +171,29 @@ const About = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-10 text-white">
-              <div className="bg-white/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                <Target className="h-8 w-8" />
+            <Reveal direction="right">
+              <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-10 text-white h-full">
+                <div className="bg-white/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                  <Target className="h-8 w-8" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
+                <p className="text-blue-100 leading-relaxed text-lg">
+                  To simplify and demystify the process of gaining admission to a UK university for international students — particularly those from South Asia and Africa — by providing free, expert, and personalised guidance from course selection through to pre-departure support.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-              <p className="text-blue-100 leading-relaxed text-lg">
-                To empower students worldwide with comprehensive guidance and support, enabling them to access quality international education and achieve their full potential. We are committed to providing personalized, ethical, and transparent services that transform educational aspirations into reality.
-              </p>
-            </div>
+            </Reveal>
 
-            <div className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-3xl p-10 text-white">
-              <div className="bg-white/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                <Eye className="h-8 w-8" />
+            <Reveal direction="left">
+              <div className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-3xl p-10 text-white h-full">
+                <div className="bg-white/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                  <Eye className="h-8 w-8" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
+                <p className="text-purple-100 leading-relaxed text-lg">
+                  To become the most trusted UK university admissions consultancy for students from South Asia and Africa — a place where every student, regardless of their background, has the support they need to unlock the opportunities that a UK education provides.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
-              <p className="text-purple-100 leading-relaxed text-lg">
-                To be the world's most trusted education consultancy, recognized for our commitment to student success, ethical practices, and innovative approach. We envision a future where every student has equal access to global educational opportunities regardless of their background.
-              </p>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -200,13 +211,15 @@ const About = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
-                  {value.icon}
+              <Reveal key={index} direction="up" delay={(index * 100) as any}>
+                <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 group h-full">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                    {value.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
+                  <p className="text-gray-600">{value.description}</p>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -262,21 +275,23 @@ const About = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, index) => (
-              <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
-                <div className="relative overflow-hidden">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <Reveal key={index} direction="up" delay={(index * 100) as any}>
+                <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group h-full">
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  </div>
+                  <div className="p-6 text-center">
+                    <h3 className="text-xl font-semibold text-gray-900">{member.name}</h3>
+                    <p className="text-blue-600 font-medium">{member.role}</p>
+                    <p className="text-gray-500 text-sm mt-2">{member.bio}</p>
+                  </div>
                 </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-semibold text-gray-900">{member.name}</h3>
-                  <p className="text-blue-600 font-medium">{member.role}</p>
-                  <p className="text-gray-500 text-sm mt-2">{member.bio}</p>
-                </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -289,7 +304,7 @@ const About = () => {
             Ready to Start Your Journey With Us?
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Join thousands of students who have achieved their dreams with NWC Education.
+            Join students from South Asia and Africa who have achieved their dreams of studying in the UK with EduQuest Consultancy.
           </p>
           <Link
             to="/contact"
