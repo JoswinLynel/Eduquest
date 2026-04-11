@@ -35,24 +35,6 @@ const TestimonialCard = ({ name, university, country, image, quote }: {
 );
 
 const Home = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const handleTimeUpdate = () => {
-      // Prevent the visible flash/cut at the end of HTML5 videos by forcing the loop slightly early.
-      if (video.duration && video.currentTime >= video.duration - 0.15) {
-        video.currentTime = 0;
-        video.play().catch(() => {});
-      }
-    };
-
-    video.addEventListener('timeupdate', handleTimeUpdate);
-    return () => video.removeEventListener('timeupdate', handleTimeUpdate);
-  }, []);
-
   const services = [
     {
       icon: <BookOpen className="h-10 w-10" />,
@@ -178,14 +160,10 @@ const Home = () => {
       <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
         {/* Full Screen Background Image */}
         <div className="absolute inset-0 z-0">
-          <video
-            ref={videoRef}
-            src="/hero-video.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover object-center scale-[1.35] transition-opacity duration-500"
+          <img
+            src="/hero-photo.png"
+            alt="Students on campus"
+            className="w-full h-full object-cover object-center scale-[1.05] transition-opacity duration-500"
           />
           {/* Dark Overlay for Readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-blue-900/40 to-transparent"></div>
