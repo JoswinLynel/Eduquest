@@ -208,8 +208,13 @@ const Home = () => {
 
                 <div className="flex items-center gap-6 pt-8">
                   <div className="flex -space-x-3">
-                    {[1, 2, 3, 4].map((i) => (
-                      <div key={i} className="w-12 h-12 rounded-full border-2 border-white bg-gradient-to-br from-blue-400 to-indigo-500 shadow-lg"></div>
+                    {[
+                      'https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=100&h=100&fit=crop&crop=face',
+                      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face',
+                      'https://images.unsplash.com/photo-1611432579699-484f7990b127?w=100&h=100&fit=crop&crop=face',
+                      'https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?w=100&h=100&fit=crop&crop=face'
+                    ].map((src, i) => (
+                      <img key={i} src={src} alt="Verified successful student" className="w-12 h-12 rounded-full border-2 border-white object-cover shadow-lg" />
                     ))}
                   </div>
                   <div className="text-sm">
