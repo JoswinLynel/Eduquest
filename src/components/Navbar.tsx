@@ -26,7 +26,7 @@ const Navbar = () => {
               <img
                 src="/logo.png"
                 alt="EduQuest Consultancy"
-                className="h-16 w-auto object-contain"
+                className="h-20 w-auto object-contain scale-[2] translate-x-6 origin-left"
               />
             </Link>
           </div>
