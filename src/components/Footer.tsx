@@ -30,7 +30,7 @@ const Footer = () => {
               <img
                 src="/logo.png"
                 alt="EduQuest Consultancy"
-                className="h-24 w-auto object-contain brightness-0 invert scale-[1.75] translate-x-4 origin-left"
+                className="h-20 w-auto object-contain brightness-0 invert"
               />
             </Link>
             <p className="text-gray-400 leading-relaxed">
