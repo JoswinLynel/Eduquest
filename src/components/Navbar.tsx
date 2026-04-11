@@ -11,6 +11,7 @@ const Navbar = () => {
     { name: 'About Us', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'Destinations', path: '/destinations' },
+    { name: 'Blog', path: '/blog' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -25,14 +26,8 @@ const Navbar = () => {
               <img
                 src="/logo.png"
                 alt="EduQuest Consultancy"
-                className="h-16 w-auto object-contain"
+                className="h-20 w-auto object-contain scale-[2] translate-x-6 origin-left"
               />
-              <div className="flex flex-col -space-y-1">
-                <span className="text-3xl font-bold text-blue-900 leading-none tracking-tight">
-                  Edu<span className="font-extrabold text-blue-600">Quest</span>
-                </span>
-                <p className="text-[13px] text-gray-500 font-semibold tracking-[0.1em] uppercase">Consultancy</p>
-              </div>
             </Link>
           </div>
 

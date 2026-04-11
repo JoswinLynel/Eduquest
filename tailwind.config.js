@@ -22,8 +22,47 @@ module.exports = {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				blue: {
+					50: '#e8f2fa',
+					100: '#d1e6f5',
+					200: '#a3cceb',
+					300: '#75b3e1',
+					400: '#479ad7',
+					500: '#2980c6',
+					600: '#1f69a5',
+					700: '#185688',
+					800: '#13466f',
+					900: '#08416B', 
+					950: '#052945',
+				},
+				orange: {
+					50: '#fff9ed',
+					100: '#fff3d5',
+					200: '#fee5a7',
+					300: '#fdd370',
+					400: '#fcb938', // very slightly lighter than 500
+					500: '#F4941E', // exact logo orange
+					600: '#db7811',
+					700: '#b65811',
+					800: '#914515',
+					900: '#763a14',
+					950: '#431d06',
+				},
+				yellow: {
+					50: '#fefce8',
+					100: '#fef9c3',
+					200: '#fef08a',
+					300: '#fde047',
+					400: '#F4941E', // mapped logo orange to yellow-400
+					500: '#eab308',
+					600: '#ca8a04',
+					700: '#a16207',
+					800: '#854d0e',
+					900: '#713f12',
+					950: '#422006',
+				},
 				primary: {
-					DEFAULT: '#2B5D3A',
+					DEFAULT: '#08416B',
 					foreground: 'hsl(var(--primary-foreground))',
 				},
 				secondary: {
@@ -72,5 +111,5 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [require('tailwindcss-animate')],
+	plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
 }

@@ -6,6 +6,7 @@ import { cn } from "../lib/utils";
 
 export interface CardFlipProps {
   icon?: React.ReactNode;
+  image?: string;
   title?: string;
   subtitle?: string;
   description?: string;
@@ -14,6 +15,7 @@ export interface CardFlipProps {
 
 export default function CardFlip({
   icon,
+  image,
   title = "Design Systems",
   subtitle = "Explore the fundamentals",
   description = "Dive deep into the world of modern UI/UX design.",
@@ -50,34 +52,43 @@ export default function CardFlip({
           )}
         >
           {/* Subtle top glare effect */}
-          <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-white to-transparent opacity-60 pointer-events-none" />
+          <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-white to-transparent opacity-60 pointer-events-none z-10" />
 
-          {/* Top section with centered icon and ripple effect */}
-          <div className="relative h-[250px] flex items-center justify-center overflow-hidden">
-            {/* Richer inner glow */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-[200px] h-[200px] bg-blue-400/10 rounded-full blur-3xl group-hover:bg-blue-500/20 group-hover:scale-110 transition-all duration-700"></div>
-            </div>
-            
-            <div className="relative flex h-[120px] w-[120px] items-center justify-center">
-              {/* Ripple rings */}
-              {[...Array(6)].map((_, i) => (
-                <div
-                  key={i}
-                  className={cn(
-                    "absolute h-[60px] w-[60px] rounded-full",
-                    "border border-blue-600/30",
-                    "animate-[scale-out_4s_linear_infinite]"
-                  )}
-                  style={{ animationDelay: `${i * 0.6}s` }}
+          {/* Top section with image and gradient mask */}
+          <div className="relative h-full w-full overflow-hidden bg-gray-100">
+            {image ? (
+              <>
+                <img 
+                  src={image} 
+                  alt={title} 
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" 
                 />
-              ))}
-              
-              {/* Icon container */}
-              <div className="relative z-10 bg-white shadow-xl shadow-blue-500/10 p-5 rounded-2xl text-blue-600 transition-transform duration-500 ease-out group-hover:scale-110 group-hover:rotate-3 border border-blue-50">
-                {icon}
+                {/* Gradient to smooth out the bottom where the white box sits */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-white z-0"></div>
+              </>
+            ) : (
+              <div className="relative h-[250px] flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-[200px] h-[200px] bg-blue-400/10 rounded-full blur-3xl group-hover:bg-blue-500/20 group-hover:scale-110 transition-all duration-700"></div>
+                </div>
+                <div className="relative flex h-[120px] w-[120px] items-center justify-center">
+                  {[...Array(6)].map((_, i) => (
+                    <div
+                      key={i}
+                      className={cn(
+                        "absolute h-[60px] w-[60px] rounded-full",
+                        "border border-blue-600/30",
+                        "animate-[scale-out_4s_linear_infinite]"
+                      )}
+                      style={{ animationDelay: `${i * 0.6}s` }}
+                    />
+                  ))}
+                  <div className="relative z-10 bg-white shadow-xl shadow-blue-500/10 p-5 rounded-2xl text-blue-600 transition-transform duration-500 ease-out group-hover:scale-110 group-hover:rotate-3 border border-blue-50">
+                    {icon}
+                  </div>
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           {/* Bottom section with text and button */}

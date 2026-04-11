@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   GraduationCap, BookOpen, Plane, FileCheck, Users, Award,
   CheckCircle, ArrowRight, Star, Quote, Globe, Building2,
@@ -34,9 +35,28 @@ const TestimonialCard = ({ name, university, country, image, quote }: {
 );
 
 const Home = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleTimeUpdate = () => {
+      // Prevent the visible flash/cut at the end of HTML5 videos by forcing the loop slightly early.
+      if (video.duration && video.currentTime >= video.duration - 0.15) {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      }
+    };
+
+    video.addEventListener('timeupdate', handleTimeUpdate);
+    return () => video.removeEventListener('timeupdate', handleTimeUpdate);
+  }, []);
+
   const services = [
     {
       icon: <BookOpen className="h-10 w-10" />,
+      image: '/service1.png',
       title: 'Course & University Selection',
       subtitle: 'Find your perfect match',
       description: 'Expert guidance to find the perfect course and university that matches your career aspirations.',
@@ -44,6 +64,7 @@ const Home = () => {
     },
     {
       icon: <FileCheck className="h-10 w-10" />,
+      image: '/service2.png',
       title: 'Application Support',
       subtitle: 'Stand out from the crowd',
       description: 'Comprehensive assistance with applications, personal statements, and documentation.',
@@ -51,6 +72,7 @@ const Home = () => {
     },
     {
       icon: <Plane className="h-10 w-10" />,
+      image: '/service3.png',
       title: 'Visa Assistance',
       subtitle: 'Smooth & successful process',
       description: 'Step-by-step visa guidance ensuring a smooth and successful application process.',
@@ -58,6 +80,7 @@ const Home = () => {
     },
     {
       icon: <Users className="h-10 w-10" />,
+      image: '/service4.png',
       title: 'Pre-Departure Support',
       subtitle: 'Ready for your journey',
       description: 'Complete preparation for your journey including accommodation and travel arrangements.',
@@ -73,12 +96,12 @@ const Home = () => {
   ];
 
   const destinations = [
-    { country: 'United Kingdom', flag: '🇬🇧', universities: '150+ Universities', popular: true, image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&h=500&fit=crop' },
-    { country: 'United States', flag: '🇺🇸', universities: '4,000+ Institutions', popular: true, image: 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=800&h=500&fit=crop' },
-    { country: 'Canada', flag: '🇨🇦', universities: '100+ Universities', popular: true, image: 'https://images.unsplash.com/photo-1517935706615-2717063c2225?w=800&h=500&fit=crop' },
-    { country: 'Australia', flag: '🇦🇺', universities: '43 Universities', popular: false, image: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=800&h=500&fit=crop' },
-    { country: 'Germany', flag: '🇩🇪', universities: '400+ Universities', popular: false, image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&h=500&fit=crop' },
-    { country: 'Ireland', flag: '🇮🇪', universities: '34 Institutions', popular: false, image: 'https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?w=800&h=500&fit=crop' },
+    { key: 'uk', country: 'United Kingdom', flag: '🇬🇧', universities: '150+ Universities', popular: true, image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&h=500&fit=crop' },
+    { key: 'usa', country: 'United States', flag: '🇺🇸', universities: '4,000+ Institutions', popular: true, image: 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=800&h=500&fit=crop' },
+    { key: 'canada', country: 'Canada', flag: '🇨🇦', universities: '100+ Universities', popular: true, image: 'https://images.unsplash.com/photo-1517935706615-2717063c2225?w=800&h=500&fit=crop' },
+    { key: 'australia', country: 'Australia', flag: '🇦🇺', universities: '43 Universities', popular: false, image: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=800&h=500&fit=crop' },
+    { key: 'germany', country: 'Germany', flag: '🇩🇪', universities: '400+ Universities', popular: false, image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&h=500&fit=crop' },
+    { key: 'ireland', country: 'Ireland', flag: '🇮🇪', universities: '34 Institutions', popular: false, image: 'https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?w=800&h=500&fit=crop' },
   ];
 
   const testimonials = [
@@ -86,43 +109,57 @@ const Home = () => {
       name: 'Sarah Chen',
       university: 'University of Oxford',
       country: 'UK',
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face',
+      image: 'https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=150&h=150&fit=crop&crop=face',
       quote: 'EduQuest made my dream of studying at Oxford a reality. Their guidance through every step was invaluable.',
     },
     {
       name: 'Ahmed Hassan',
       university: 'University of Manchester',
       country: 'UK',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
+      image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face',
       quote: "The team's knowledge of the UK education system is unmatched. They helped me find the perfect university and handled my CAS flawlessly.",
     },
     {
       name: 'Priya Sharma',
-      university: 'UCL',
-      country: 'UK',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
-      quote: 'I was overwhelmed by the application process, but EduQuest made it so simple. Their visa support was a lifesaver!',
+      university: 'University of Toronto',
+      country: 'Canada',
+      image: 'https://images.unsplash.com/photo-1611432579699-484f7990b127?w=150&h=150&fit=crop&crop=face',
+      quote: 'EduQuest helped me navigate the Canadian immigration process with ease. Their PGWP guidance was a game-changer!',
     },
     {
       name: 'David Okafor',
-      university: 'University of Birmingham',
-      country: 'UK',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face',
-      quote: 'Excellent service! They helped me secure a scholarship and guided me through the entire enrollment process.',
+      university: 'Columbia University',
+      country: 'USA',
+      image: 'https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?w=150&h=150&fit=crop&crop=face',
+      quote: 'From choosing the right program to securing my F-1 visa, EduQuest was with me every step. I couldn\'t have done it without them.',
     },
     {
       name: 'Amara Kone',
-      university: "King's College London",
-      country: 'UK',
-      image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face',
-      quote: 'Professional, reliable, and truly caring. I highly recommend EduQuest to any student aiming for top-tier UK universities.',
+      university: 'University of Melbourne',
+      country: 'Australia',
+      image: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=150&h=150&fit=crop&crop=face',
+      quote: 'Studying in Australia seemed impossible until I met EduQuest. They made the entire process seamless and stress-free.',
     },
     {
       name: 'Raj Patel',
-      university: 'University of Bristol',
+      university: 'Technical University of Munich',
+      country: 'Germany',
+      image: 'https://images.unsplash.com/photo-1618077360395-f3068be8e001?w=150&h=150&fit=crop&crop=face',
+      quote: 'I never knew tuition-free education in Germany was possible until EduQuest showed me the way. Truly life-changing!',
+    },
+    {
+      name: 'Fatima Al-Rashid',
+      university: 'Trinity College Dublin',
+      country: 'Ireland',
+      image: 'https://images.unsplash.com/photo-1548142813-c348350df52b?w=150&h=150&fit=crop&crop=face',
+      quote: 'Ireland was the perfect choice for my tech career. EduQuest connected me to the right university and the right opportunities.',
+    },
+    {
+      name: 'Michael Adeyemi',
+      university: "King's College London",
       country: 'UK',
-      image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face',
-      quote: 'Transitioning to life in the UK was easier thanks to their pre-departure briefings. They are experts in their field.',
+      image: 'https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=150&h=150&fit=crop&crop=face',
+      quote: 'Professional, reliable, and truly caring. I highly recommend EduQuest to any student aiming for top-tier UK universities.',
     },
   ];
 
@@ -141,10 +178,14 @@ const Home = () => {
       <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
         {/* Full Screen Background Image */}
         <div className="absolute inset-0 z-0">
-          <img
-            src="/hero-photo.png"
-            alt="International students at UK university"
-            className="w-full h-full object-cover object-center"
+          <video
+            ref={videoRef}
+            src="/hero-video.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover object-center scale-[1.35] transition-opacity duration-500"
           />
           {/* Dark Overlay for Readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-blue-900/40 to-transparent"></div>
@@ -253,6 +294,7 @@ const Home = () => {
               <Reveal key={index} direction="up" delay={(index * 100) as any} className="w-full flex justify-center">
                 <CardFlip 
                   icon={service.icon}
+                  image={service.image}
                   title={service.title}
                   subtitle={service.subtitle}
                   description={service.description}
@@ -291,8 +333,9 @@ const Home = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {destinations.map((dest, index) => (
               <Reveal key={index} direction="up" delay={(index * 100) as any}>
-                <div
-                  className="relative rounded-2xl p-6 border border-gray-100 hover:border-blue-300 hover:shadow-xl transition-all group overflow-hidden cursor-pointer min-h-[140px] flex items-center"
+                <Link
+                  to={`/destinations?country=${dest.key}`}
+                  className="relative rounded-2xl p-6 border border-gray-100 hover:border-blue-300 hover:shadow-xl transition-all group overflow-hidden cursor-pointer min-h-[140px] flex items-center block"
                 >
                   {/* Background Image & Overlay */}
                   <div className="absolute inset-0 z-0">
@@ -322,7 +365,7 @@ const Home = () => {
                     </div>
                     <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-white group-hover:translate-x-1 transition-all" />
                   </div>
-                </div>
+                </Link>
               </Reveal>
             ))}
           </div>
@@ -448,7 +491,7 @@ const Home = () => {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                   <a
-                    href="tel:+447875109928"
+                    href="tel:+447301793020"
                     className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white rounded-xl font-semibold hover:bg-white/10 transition-all"
                   >
                     Call Us Now

@@ -11,6 +11,9 @@ const Contact = () => {
     lastName: '',
     email: '',
     phone: '',
+    nationality: '',
+    dateOfBirth: '',
+    gender: '',
     destination: '',
     studyLevel: '',
     intake: '',
@@ -34,6 +37,9 @@ const Contact = () => {
         lastName: '',
         email: '',
         phone: '',
+        nationality: '',
+        dateOfBirth: '',
+        gender: '',
         destination: '',
         studyLevel: '',
         intake: '',
@@ -56,7 +62,7 @@ const Contact = () => {
     {
       icon: <Phone className="h-6 w-6" />,
       title: 'Call Us',
-      details: ['+44 7875 109928 (UK)', '+880 1335845976 (BD)', 'Mon-Fri: 9am-6pm'],
+      details: ['+44 7301 793020 (UK)', '+880 1335845976 (BD)', 'Mon-Fri: 9am-6pm'],
     },
     {
       icon: <Mail className="h-6 w-6" />,
@@ -108,6 +114,7 @@ const Contact = () => {
     'May 2025',
     'September 2025',
     'January 2026',
+    'September/October 2026',
     'Not Sure Yet',
   ];
 
@@ -224,6 +231,52 @@ const Contact = () => {
                           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none"
                           placeholder="+1 (234) 567-8900"
                         />
+                      </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-6">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Nationality *
+                        </label>
+                        <input
+                          type="text"
+                          name="nationality"
+                          value={formData.nationality}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none"
+                          placeholder="e.g. British"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Date of Birth *
+                        </label>
+                        <input
+                          type="date"
+                          name="dateOfBirth"
+                          value={formData.dateOfBirth}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Gender *
+                        </label>
+                        <select
+                          name="gender"
+                          value={formData.gender}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none bg-white"
+                        >
+                          <option value="">Select Gender</option>
+                          <option value="Male">Male</option>
+                          <option value="Female">Female</option>
+                        </select>
                       </div>
                     </div>
 
@@ -383,22 +436,39 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="bg-white rounded-3xl overflow-hidden shadow-lg">
-            <div className="aspect-video bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="h-16 w-16 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-gray-900">EduQuest Consultancy</h3>
-                <p className="text-gray-600">53 Harts Lane, Barking, London, IG11 8NA</p>
-                <a
-                  href="https://maps.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-4 text-blue-600 font-medium hover:text-blue-800"
-                >
-                  Get Directions
-                  <ArrowRight className="h-4 w-4" />
-                </a>
+          <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+            <div className="aspect-[21/9] md:aspect-[2/1] lg:aspect-[2.5/1] w-full bg-gray-100 relative group">
+              <iframe 
+                src="https://maps.google.com/maps?q=53%20Harts%20Lane,%20Barking,%20London,%20IG11%208NA&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+              ></iframe>
+            </div>
+            
+            <div className="p-6 bg-white flex flex-col md:flex-row items-center justify-between gap-6 border-t border-gray-100">
+              <div className="flex items-center gap-4 text-left w-full md:w-auto">
+                 <div className="h-14 w-14 bg-blue-50 rounded-2xl flex items-center justify-center flex-shrink-0">
+                    <MapPin className="h-7 w-7 text-blue-600" />
+                 </div>
+                 <div>
+                    <h3 className="text-lg font-bold text-gray-900">EduQuest Consultancy London</h3>
+                    <p className="text-gray-600 text-sm mt-0.5">53 Harts Lane, Barking, London, IG11 8NA</p>
+                 </div>
               </div>
+              <a
+                href="https://maps.google.com/maps?q=53%20Harts%20Lane,%20Barking,%20London,%20IG11%208NA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full md:w-auto px-8 py-3.5 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 hover:shadow-lg hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 whitespace-nowrap"
+              >
+                Get Directions
+                <ArrowRight className="h-5 w-5" />
+              </a>
             </div>
           </div>
         </div>
@@ -416,7 +486,7 @@ const Contact = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
             {[
-              { city: 'London', country: 'United Kingdom', flag: '🇬🇧', type: 'Head Office', address: '53 Harts Lane, Barking, IG11 8NA', phone: '+44 7875 109928' },
+              { city: 'London', country: 'United Kingdom', flag: '🇬🇧', type: 'Head Office', address: '53 Harts Lane, Barking, IG11 8NA', phone: '+44 7301 793020' },
               { city: 'Dhaka', country: 'Bangladesh', flag: '🇧🇩', type: 'Regional Office', address: '20/6 West Panthapath, Level-5, Dhaka-1205', phone: '+880 1335845976' },
             ].map((office, index) => (
               <div key={index} className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">

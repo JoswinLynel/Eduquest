@@ -28,7 +28,6 @@ const Services = () => {
         'UCAS and direct application assistance',
         'Personal statement (SOP) writing guidance',
         'CV optimization for UK academic standards',
-        'Reference letter support',
         'Interview preparation for competitive UK courses',
       ],
     },
@@ -50,7 +49,7 @@ const Services = () => {
       description: 'We prepare you for life in the UK with comprehensive pre-departure orientation, ensuring you\'re ready for your new journey in Britain.',
       features: [
         'UK accommodation search and booking assistance',
-        'BRP (Biometric Residence Permit) collection guidance',
+        'E-Visa guidance',
         'Pre-departure orientation and packing lists',
         'UK banking and NI number advice',
         'Cultural adaptation tips for life in the UK',

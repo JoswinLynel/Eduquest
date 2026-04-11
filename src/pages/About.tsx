@@ -93,7 +93,7 @@ const About = () => {
                   <span className="text-yellow-400"> Academic Journeys</span>
                 </h1>
                 <p className="text-xl text-blue-100 leading-relaxed">
-                  EduQuest Consultancy is a UK-based international student recruitment agency, helping students from South Asia and Africa access world-class UK universities — completely free of charge.
+                  EduQuest Consultancy UK based student recruitment agency helping international students (From South Asia,Africa,Europe) and local (UK Home) students gain admission to universities across the UK. We offer one to one support at every stage from choosing the right course to submitting strong applications and preparing to move-completely free for Students.
                 </p>
               </div>
             </Reveal>
@@ -146,7 +146,7 @@ const About = () => {
                     EduQuest Consultancy was founded in London with a clear purpose: to simplify and demystify the process of gaining admission to a UK university for students who may lack the knowledge, language skills, or resources to navigate the system independently.
                   </p>
                   <p>
-                    We act as intermediaries between prospective international students — primarily from South Asia (Bangladesh, Pakistan, India) and Africa (Nigeria, Ghana) — and UK universities. Our services cover every stage of the study-abroad journey, from course and university selection through to application, visa support, and pre-departure guidance.
+                    We act as intermediaries between prospective international students — primarily from South Asia (Bangladesh, Pakistan, India), Africa (Nigeria, Ghana) and Europe — and UK universities. Our services cover every stage of the study-abroad journey, from course and university selection through to application, visa support, and pre-departure guidance.
                   </p>
                   <p>
                     Our services are completely free for students. We earn our revenue from commissions paid by our university partners, meaning there is never any cost to you. Our offices in London and Dhaka allow us to provide local, accessible support to students wherever they are.
@@ -178,7 +178,7 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
                 <p className="text-blue-100 leading-relaxed text-lg">
-                  To simplify and demystify the process of gaining admission to a UK university for international students — particularly those from South Asia and Africa — by providing free, expert, and personalised guidance from course selection through to pre-departure support.
+                  To simplify and demystify the process of gaining admission to a UK university for international students — particularly those from South Asia, Africa and Europe — by providing free, expert, and personalised guidance from course selection through to pre-departure support.
                 </p>
               </div>
             </Reveal>
@@ -190,7 +190,7 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
                 <p className="text-purple-100 leading-relaxed text-lg">
-                  To become the most trusted UK university admissions consultancy for students from South Asia and Africa — a place where every student, regardless of their background, has the support they need to unlock the opportunities that a UK education provides.
+                  To become the most trusted UK university admissions consultancy for students from South Asia, Africa and Europe — a place where every student, regardless of their background, has the support they need to unlock the opportunities that a UK education provides.
                 </p>
               </div>
             </Reveal>
@@ -199,28 +199,51 @@ const About = () => {
       </section>
 
       {/* Our Values */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+      <section className="py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
+        {/* Background decorations */}
+        <div className="absolute top-0 left-1/4 w-72 h-72 bg-blue-100/40 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-indigo-100/40 rounded-full blur-3xl"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center max-w-3xl mx-auto mb-20">
             <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">Our Values</span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3">
               The Principles That
               <span className="text-blue-600"> Guide Us</span>
             </h2>
+            <p className="text-gray-500 mt-4 text-lg">The core beliefs that shape every interaction and decision at EduQuest.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <Reveal key={index} direction="up" delay={(index * 100) as any}>
-                <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 group h-full">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
-                    {value.icon}
+            {values.map((value, index) => {
+              const gradients = [
+                'from-blue-500 to-cyan-400',
+                'from-indigo-500 to-purple-500',
+                'from-amber-500 to-orange-400',
+                'from-emerald-500 to-teal-400',
+              ];
+              return (
+                <Reveal key={index} direction="up" delay={(index * 100) as any}>
+                  <div className="relative bg-white rounded-3xl p-8 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group h-full border border-gray-100/80 overflow-hidden">
+                    {/* Top gradient accent line */}
+                    <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${gradients[index]} opacity-80 group-hover:opacity-100 transition-opacity`}></div>
+
+                    {/* Large faded number */}
+                    <span className="absolute top-4 right-5 text-7xl font-black text-gray-100 group-hover:text-blue-50 transition-colors duration-500 select-none leading-none">
+                      0{index + 1}
+                    </span>
+
+                    {/* Icon */}
+                    <div className={`relative w-16 h-16 bg-gradient-to-br ${gradients[index]} rounded-2xl flex items-center justify-center text-white mb-7 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                      {value.icon}
+                    </div>
+
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 relative">{value.title}</h3>
+                    <p className="text-gray-500 leading-relaxed relative">{value.description}</p>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
-                  <p className="text-gray-600">{value.description}</p>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -240,19 +263,21 @@ const About = () => {
             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-100 hidden md:block"></div>
             <div className="space-y-12">
               {milestones.map((milestone, index) => (
-                <div key={index} className={`flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8`}>
-                  <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                    <div className={`bg-white rounded-2xl p-6 shadow-lg inline-block ${index % 2 === 0 ? 'md:ml-auto' : 'md:mr-auto'}`}>
-                      <span className="text-blue-600 font-bold text-2xl">{milestone.year}</span>
-                      <h3 className="text-xl font-semibold text-gray-900 mt-2">{milestone.title}</h3>
-                      <p className="text-gray-600 mt-2">{milestone.description}</p>
+                <Reveal key={index} direction={index % 2 === 0 ? 'right' : 'left'} delay={(index * 150) as any}>
+                  <div className={`flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8`}>
+                    <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                      <div className={`bg-white rounded-2xl p-6 shadow-lg inline-block ${index % 2 === 0 ? 'md:ml-auto' : 'md:mr-auto'} hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}>
+                        <span className="text-blue-600 font-bold text-2xl">{milestone.year}</span>
+                        <h3 className="text-xl font-semibold text-gray-900 mt-2">{milestone.title}</h3>
+                        <p className="text-gray-600 mt-2">{milestone.description}</p>
+                      </div>
                     </div>
+                    <div className="hidden md:flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full text-white z-10 shadow-lg shadow-blue-500/30">
+                      <CheckCircle className="h-6 w-6" />
+                    </div>
+                    <div className="flex-1 hidden md:block"></div>
                   </div>
-                  <div className="hidden md:flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full text-white z-10">
-                    <CheckCircle className="h-6 w-6" />
-                  </div>
-                  <div className="flex-1 hidden md:block"></div>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -304,7 +329,7 @@ const About = () => {
             Ready to Start Your Journey With Us?
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Join students from South Asia and Africa who have achieved their dreams of studying in the UK with EduQuest Consultancy.
+            Join students from South Asia, Africa and Europe who have achieved their dreams of studying in the UK with EduQuest Consultancy.
           </p>
           <Link
             to="/contact"

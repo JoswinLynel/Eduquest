@@ -6,6 +6,7 @@ const Footer = () => {
     { name: 'About Us', path: '/about' },
     { name: 'Our Services', path: '/services' },
     { name: 'Study Destinations', path: '/destinations' },
+    { name: 'Blog', path: '/blog' },
     { name: 'Contact Us', path: '/contact' },
   ];
 
@@ -29,17 +30,11 @@ const Footer = () => {
               <img
                 src="/logo.png"
                 alt="EduQuest Consultancy"
-                className="h-14 w-auto object-contain brightness-200"
+                className="h-24 w-auto object-contain brightness-0 invert scale-[1.75] translate-x-4 origin-left"
               />
-              <div className="flex flex-col -space-y-1">
-                <span className="text-2xl font-bold text-white leading-none">
-                  Edu<span className="font-extrabold text-blue-400">Quest</span>
-                </span>
-                <p className="text-[11px] text-gray-400 font-semibold tracking-[0.1em] uppercase">Consultancy</p>
-              </div>
             </Link>
             <p className="text-gray-400 leading-relaxed">
-              Your trusted partner for UK university admissions. We help students from South Asia and Africa achieve their dreams of studying in the UK with personalised, free guidance and support.
+              Your trusted partner for UK university admissions. We help students from South Asia, Africa and Europe achieve their dreams of studying in the UK with personalised, free guidance and support.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="bg-gray-800 p-2 rounded-lg hover:bg-blue-600 transition-colors">
@@ -122,8 +117,8 @@ const Footer = () => {
               <li className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-blue-500 flex-shrink-0" />
                 <div>
-                  <a href="tel:+447875109928" className="text-gray-400 hover:text-white transition-colors block">
-                    +44 7875 109928 (UK)
+                  <a href="tel:+447301793020" className="text-gray-400 hover:text-white transition-colors block">
+                    +44 7301 793020 (UK)
                   </a>
                   <a href="tel:+8801335845976" className="text-gray-400 hover:text-white transition-colors block">
                     +880 1335845976 (BD)
@@ -147,7 +142,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-center md:text-left">
             <div className="flex flex-col md:flex-row items-center gap-1 md:gap-4">
               <p className="text-gray-500 text-sm">
-                © {new Date().getFullYear()} EduQuest Consultancy. All rights reserved.
+                © {new Date().getFullYear()} EduQuest Consultancy. All rights reserved. EDUQUEST CONSULTANTS LTD is a UK company with Registration No: 16151445
               </p>
               <span className="hidden md:inline text-gray-700">|</span>
               <a 
