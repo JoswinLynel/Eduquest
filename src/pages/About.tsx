@@ -39,28 +39,10 @@ const About = () => {
 
   const team = [
     {
-      name: 'Dr. James Wilson',
+      name: 'M A Khurshid',
       role: 'Founder & CEO',
-      bio: '20+ years in international education',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face',
-    },
-    {
-      name: 'Sarah Thompson',
-      role: 'Head of UK Admissions',
-      bio: 'Former university admissions officer',
-      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop&crop=face',
-    },
-    {
-      name: 'Michael Chang',
-      role: 'Senior Education Counsellor',
-      bio: 'Expert in STEM programmes',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face',
-    },
-    {
-      name: 'Emily Roberts',
-      role: 'Visa & Immigration Specialist',
-      bio: '10+ years visa processing experience',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face',
+      bio: 'Visionary leader in international education',
+      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop&crop=face',
     },
   ];
 
