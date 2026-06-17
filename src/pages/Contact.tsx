@@ -110,11 +110,11 @@ const Contact = () => {
   ];
 
   const intakes = [
-    'January 2025',
-    'May 2025',
-    'September 2025',
     'January 2026',
-    'September/October 2026',
+    'May 2026',
+    'September 2026',
+    'January 2027',
+    'September/October 2027',
     'Not Sure Yet',
   ];
 
