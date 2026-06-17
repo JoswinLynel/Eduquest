@@ -71,8 +71,8 @@ const Home = () => {
   ];
 
   const stats = [
-    { number: '15,000+', label: 'Students Placed', icon: <GraduationCap /> },
-    { number: '200+', label: 'Partner Universities', icon: <Building2 /> },
+    { number: '5,000+', label: 'Students Placed', icon: <GraduationCap /> },
+    { number: '100+', label: 'Partner Universities', icon: <Building2 /> },
     { number: '50+', label: 'Countries Served', icon: <Globe /> },
     { number: '98%', label: 'Visa Success Rate', icon: <Award /> },
   ];
@@ -149,7 +149,7 @@ const Home = () => {
     { icon: <Sparkles />, title: 'Free Services', desc: 'All our services are completely free for students' },
     { icon: <Target />, title: 'Expert Counsellors', desc: 'Experienced advisors with in-depth knowledge' },
     { icon: <Heart />, title: 'Personalized Guidance', desc: 'Tailored support for your unique needs' },
-    { icon: <TrendingUp />, title: 'Proven Track Record', desc: '15+ years of successful placements' },
+    { icon: <TrendingUp />, title: 'Proven Track Record', desc: '10+ years of successful placements' },
   ];
 
 
@@ -176,7 +176,7 @@ const Home = () => {
               <div className="text-white space-y-8 animate-fade-in">
                 <div className="inline-flex items-center bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
                   <Sparkles className="h-4 w-4 mr-2 text-yellow-400" />
-                  <span className="text-sm font-medium">Trusted by 15,000+ Students Worldwide</span>
+                  <span className="text-sm font-medium">Trusted by 5,000+ Students Worldwide</span>
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
@@ -377,7 +377,7 @@ const Home = () => {
                   <span className="text-yellow-400"> International Education</span>
                 </h2>
                 <p className="text-blue-100 text-lg mb-8 leading-relaxed">
-                  With over 15 years of experience, we've helped thousands of students achieve their dreams of studying abroad. Our expert counsellors provide personalized guidance every step of the way.
+                  With over 10 years of experience, we've helped thousands of students achieve their dreams of studying abroad. Our expert counsellors provide personalized guidance every step of the way.
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-6">

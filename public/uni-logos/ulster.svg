@@ -1,0 +1,11 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="240" height="100" viewBox="0 0 240 100">
+  <rect width="240" height="100" rx="8" fill="white"/>
+  <!-- Coloured left accent bar -->
+  <rect x="0" y="0" width="6" height="100" rx="3" fill="#007749"/>
+  <!-- Abbreviation badge -->
+  <rect x="16" y="20" width="60" height="60" rx="8" fill="#E8F5EE"/>
+  <text x="46" y="57" font-family="'Arial Black',Arial,sans-serif" font-size="36" font-weight="900" fill="#007749" text-anchor="middle" dominant-baseline="middle">UU</text>
+  <!-- University name -->
+  <text x="88" y="38" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#007749" dominant-baseline="middle">ULSTER</text>
+  <text x="88" y="56" font-family="Arial,sans-serif" font-size="11" fill="#555" dominant-baseline="middle">UNIVERSITY</text>
+</svg>

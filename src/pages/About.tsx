@@ -37,20 +37,13 @@ const About = () => {
     { year: '2024', title: 'Partner University Network', description: 'Grew our network of UK university partners to provide students with a wide range of course options.' },
   ];
 
-  const team = [
-    {
-      name: 'M A Khurshid',
-      role: 'Founder & CEO',
-      bio: 'Visionary leader in international education',
-      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop&crop=face',
-    },
-  ];
+
 
   const stats = [
-    { number: '15+', label: 'Years Experience', icon: <Clock /> },
-    { number: '15,000+', label: 'Students Placed', icon: <GraduationCap /> },
-    { number: '200+', label: 'Partner Universities', icon: <Building2 /> },
-    { number: '50+', label: 'Expert Counsellors', icon: <Users /> },
+    { number: '10+', label: 'Years Experience', icon: <Clock /> },
+    { number: '5,000+', label: 'Students Placed', icon: <GraduationCap /> },
+    { number: '100+', label: 'Partner Universities', icon: <Building2 /> },
+    { number: '25+', label: 'Expert Counsellors', icon: <Users /> },
   ];
 
   return (
@@ -266,43 +259,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">Our Team</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3">
-              Meet the Experts Behind
-              <span className="text-blue-600"> Your Success</span>
-            </h2>
-            <p className="text-gray-600 mt-4 text-lg">
-              Our dedicated team of experienced professionals is committed to guiding you every step of the way.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <Reveal key={index} direction="up" delay={(index * 100) as any}>
-                <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group h-full">
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  </div>
-                  <div className="p-6 text-center">
-                    <h3 className="text-xl font-semibold text-gray-900">{member.name}</h3>
-                    <p className="text-blue-600 font-medium">{member.role}</p>
-                    <p className="text-gray-500 text-sm mt-2">{member.bio}</p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600">

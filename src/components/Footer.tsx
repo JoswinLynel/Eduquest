@@ -30,7 +30,7 @@ const Footer = () => {
               <img
                 src="/logo.png"
                 alt="EduQuest Consultancy"
-                className="h-24 w-auto object-contain brightness-0 invert scale-[1.75] translate-x-4 origin-left"
+                className="h-20 w-auto object-contain brightness-0 invert"
               />
             </Link>
             <p className="text-gray-400 leading-relaxed">
@@ -155,9 +155,8 @@ const Footer = () => {
               </a>
             </div>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-500 hover:text-white transition-colors">Terms of Service</a>
-              <a href="#" className="text-gray-500 hover:text-white transition-colors">Cookie Policy</a>
+              <Link to="/privacy" className="text-gray-500 hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="text-gray-500 hover:text-white transition-colors">Terms & Conditions</Link>
             </div>
           </div>
         </div>

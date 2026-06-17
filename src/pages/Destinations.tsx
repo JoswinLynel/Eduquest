@@ -8,40 +8,60 @@ import {
 import { Reveal } from '../components/Reveal';
 
 const partnerUniversities = [
-  { name: 'Abertay University', domain: 'abertay.ac.uk' },
-  { name: 'Anglia Ruskin University', domain: 'aru.ac.uk' },
-  { name: 'University of Bolton', domain: 'bolton.ac.uk' },
-  { name: 'University of Bedfordshire', domain: 'beds.ac.uk' },
-  { name: 'University of Chester', domain: 'chester.ac.uk' },
-  { name: 'University for the Creative Arts', domain: 'uca.ac.uk' },
-  { name: 'De Montfort University', domain: 'dmu.ac.uk' },
-  { name: 'Keele University', domain: 'keele.ac.uk' },
-  { name: 'London South Bank University', domain: 'lsbu.ac.uk' },
-  { name: 'Middlesex University', domain: 'mdx.ac.uk' },
-  { name: 'Northeastern University', domain: 'northeastern.edu' },
-  { name: 'Northumbria University', domain: 'northumbria.ac.uk' },
-  { name: 'Queen’s University Belfast', domain: 'qub.ac.uk' },
-  { name: 'Solent University', domain: 'solent.ac.uk' },
-  { name: 'Ulster University', domain: 'ulster.ac.uk' },
-  { name: 'University of South Wales', domain: 'southwales.ac.uk' },
-  { name: 'Wrexham University', domain: 'wrexham.ac.uk' },
-  { name: 'University of Portsmouth', domain: 'port.ac.uk' },
-  { name: 'Coventry University', domain: 'coventry.ac.uk' },
-  { name: 'Canterbury Christ Church University', domain: 'canterbury.ac.uk' },
-  { name: 'Falmouth University', domain: 'falmouth.ac.uk' },
-  { name: 'London Metropolitan University', domain: 'londonmet.ac.uk' },
-  { name: 'University of Hull', domain: 'hull.ac.uk' },
-  { name: 'University Of Law', domain: 'law.ac.uk' },
-  { name: 'University of Roehampton', domain: 'roehampton.ac.uk' },
-  { name: 'University of Brighton', domain: 'brighton.ac.uk' },
-  { name: 'University of Gloucestershire', domain: 'glos.ac.uk' },
-  { name: 'Aston University', domain: 'aston.ac.uk' },
-  { name: 'BPP University', domain: 'bpp.com' },
-  { name: 'UWE Bristol', domain: 'uwe.ac.uk' },
-  { name: 'University of Hertfordshire', domain: 'herts.ac.uk' },
-  { name: 'University of Greenwich', domain: 'gre.ac.uk' },
-  { name: 'University of Manchester', domain: 'manchester.ac.uk' },
-  { name: 'University of Birmingham', domain: 'bham.ac.uk' }
+  // Universities with downloaded logos
+  { name: 'Arden University',                     logo: '/uni-logos/arden.svg' },
+  { name: 'Anglia Ruskin University',              logo: '/uni-logos/aru.jpg' },
+  { name: 'University of Bolton',                  logo: '/uni-logos/uobm.jpg' },
+  { name: 'QA Higher Education',                   logo: '/uni-logos/QAHE.png' },
+  { name: 'London School of Management Education', logo: '/uni-logos/lsme.png' },
+  { name: 'London College of Contemporary Arts',   logo: '/uni-logos/LCCA.png' },
+  { name: 'London School of Science & Technology', logo: '/uni-logos/LSTT.png' },
+  { name: 'David Game Higher Education',           logo: '/uni-logos/dghe.png' },
+  { name: 'Regent College London',                 logo: '/uni-logos/rcl.png' },
+  { name: 'Oxford International',                  logo: '/uni-logos/oxfordinternational.png' },
+  { name: 'Victoria College of Arts and Design',   logo: '/uni-logos/vcad.webp' },
+  { name: 'William College',                       logo: '/uni-logos/WC.png' },
+  { name: 'LSC London',                            logo: '/uni-logos/lsc.svg' },
+  { name: 'Fairfield School of Business',          logo: '/uni-logos/fsb.png' },
+  { name: 'UK College of Commerce',                logo: '/uni-logos/ukcb.png' },
+  { name: 'UK College of Business & Computing',    logo: '/uni-logos/ukcbc.png' },
+  { name: 'The Language Gallery',                  logo: '/uni-logos/tlg.png' },
+  { name: 'London College of Contemporary Music',  logo: '/uni-logos/lccm.png' },
+  { name: 'University of Central Lancashire',      logo: '/uni-logos/ucll.png' },
+
+  // Additional universities from the original list
+  { name: 'University of Bedfordshire',            logo: '/uni-logos/beds.png' },
+  { name: 'Abertay University',                    logo: '/uni-logos/abertay.png' },
+  { name: 'University of Chester',                 logo: '/uni-logos/chester.png' },
+  { name: 'University for the Creative Arts',      logo: '/uni-logos/uca.png' },
+  { name: 'De Montfort University',                logo: '/uni-logos/dmu.png' },
+  { name: 'Keele University',                      logo: '/uni-logos/keele.png' },
+  { name: 'London South Bank University',          logo: '/uni-logos/lsbu.png' },
+  { name: 'Middlesex University',                  logo: '/uni-logos/mdx.png' },
+  { name: 'Northeastern University',               logo: '/uni-logos/northeastern.png' },
+  { name: 'Northumbria University',                logo: '/uni-logos/northumbria.png' },
+  { name: "Queen's University Belfast",            logo: '/uni-logos/qub.png' },
+  { name: 'Solent University',                     logo: '/uni-logos/solent.svg' },
+  { name: 'Ulster University',                     logo: '/uni-logos/ulster.svg' },
+  { name: 'University of South Wales',             logo: '/uni-logos/southwales.svg' },
+  { name: 'Wrexham University',                    logo: '/uni-logos/wrexham.svg' },
+  { name: 'University of Portsmouth',              logo: '/uni-logos/portsmouth.svg' },
+  { name: 'Coventry University',                   logo: '/uni-logos/coventry.svg' },
+  { name: 'Canterbury Christ Church University',   logo: '/uni-logos/canterbury.svg' },
+  { name: 'Falmouth University',                   logo: '/uni-logos/falmouth.svg' },
+  { name: 'London Metropolitan University',        logo: '/uni-logos/londonmet.svg' },
+  { name: 'University of Hull',                    logo: '/uni-logos/hull.svg' },
+  { name: 'University of Law',                     logo: '/uni-logos/law.svg' },
+  { name: 'University of Roehampton',              logo: '/uni-logos/roehampton.svg' },
+  { name: 'University of Brighton',                logo: '/uni-logos/brighton.svg' },
+  { name: 'University of Gloucestershire',         logo: '/uni-logos/glos.svg' },
+  { name: 'Aston University',                      logo: '/uni-logos/aston.svg' },
+  { name: 'BPP University',                        logo: '/uni-logos/bpp.svg' },
+  { name: 'UWE Bristol',                           logo: '/uni-logos/uwe.svg' },
+  { name: 'University of Hertfordshire',           logo: '/uni-logos/herts.svg' },
+  { name: 'University of Greenwich',               logo: '/uni-logos/greenwich.png' },
+  { name: 'University of Manchester',              logo: '/uni-logos/manchester.png' },
+  { name: 'University of Birmingham',              logo: '/uni-logos/birmingham.png' },
 ];
 
 const Destinations = () => {
@@ -406,68 +426,92 @@ const Destinations = () => {
             </div>
           </div>
 
-          {/* Partner Universities Marquee - UK Only */}
-          {activeDestination === 'uk' && (
-          <div className="mb-20 overflow-hidden py-10 relative">
-            <div className="text-center mb-10">
-              <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">Our Network</span>
-              <h2 className="text-3xl font-bold text-gray-900 mt-2">Partner Universities</h2>
-            </div>
-            
-            {/* Gradient Fades for Marquee */}
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none"></div>
-            
-            <div className="flex group overflow-hidden [--gap:2rem] [--duration:120s]">
-              <div className="flex animate-marquee gap-8 pr-8 items-center">
-                {partnerUniversities.map((partner, index) => (
-                  <div key={`partner-1-${index}`} className="group/card flex-shrink-0 w-80 h-28 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center p-5 gap-5 hover:shadow-md transition-shadow">
-                    <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center bg-gray-50 rounded-lg p-1">
-                      <img 
-                        src={`https://logo.clearbit.com/${partner.domain}?size=160`} 
-                        alt={partner.name}
-                        className="max-h-full max-w-full object-contain"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          if (!target.src.includes('gstatic')) {
-                            target.src = `https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${partner.domain}&size=128`;
-                          }
-                        }}
-                      />
-                    </div>
-                    <div className="font-bold text-gray-800 text-base leading-snug">
-                      {partner.name}
-                    </div>
-                  </div>
-                ))}
-              </div>
-              
-              {/* Duplicate for seamless loop */}
-              <div aria-hidden="true" className="flex animate-marquee gap-8 pr-8 items-center">
-                {partnerUniversities.map((partner, index) => (
-                  <div key={`partner-2-${index}`} className="group/card flex-shrink-0 w-80 h-28 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center p-5 gap-5 hover:shadow-md transition-shadow">
-                    <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center bg-gray-50 rounded-lg p-1">
-                      <img 
-                        src={`https://logo.clearbit.com/${partner.domain}?size=160`} 
-                        alt={partner.name}
-                        className="max-h-full max-w-full object-contain"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          if (!target.src.includes('gstatic')) {
-                            target.src = `https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${partner.domain}&size=128`;
-                          }
-                        }}
-                      />
-                    </div>
-                    <div className="font-bold text-gray-800 text-base leading-snug">
-                      {partner.name}
-                    </div>
-                  </div>
-                ))}
-              </div>
+        </div>
+
+        {/* Partner Universities Marquee - UK Only */}
+        {activeDestination === 'uk' && (
+        <div className="w-full mb-20 bg-white">
+          <style>{`
+            @keyframes scroll-logos {
+              0%   { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+            .logos-track {
+              animation: scroll-logos 100s linear infinite;
+              display: flex;
+              width: max-content;
+              will-change: transform;
+            }
+            .logos-track:hover {
+              animation-play-state: paused;
+            }
+          `}</style>
+
+          <div className="text-center py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Link
+              to="/partners"
+              className="group inline-flex items-center gap-2 text-3xl font-bold text-gray-900 hover:text-blue-700 transition-colors duration-200"
+            >
+              Our Partner Universities
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-blue-500 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
+            <p className="text-gray-500 mt-2">We work with trusted institutions across the UK</p>
+          </div>
+
+          {/* Top border */}
+          <div className="h-[3px] bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-600 mb-2" />
+
+          {/* Marquee strip */}
+          <div className="relative overflow-hidden bg-white py-4">
+            {/* Fade edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
+            {/* Single track with logos doubled for seamless loop */}
+            <div className="logos-track">
+              {/* First set */}
+              {partnerUniversities.map((partner, index) => (
+                <div
+                  key={`a-${index}`}
+                  className="flex-shrink-0 flex items-center justify-center px-8 mx-2 border-r border-gray-100"
+                  style={{ width: '220px', height: '140px' }}
+                >
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    title={partner.name}
+                    style={{ maxHeight: '110px', maxWidth: '180px', objectFit: 'contain' }}
+                  />
+                </div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {partnerUniversities.map((partner, index) => (
+                <div
+                  key={`b-${index}`}
+                  aria-hidden
+                  className="flex-shrink-0 flex items-center justify-center px-8 mx-2 border-r border-gray-100"
+                  style={{ width: '220px', height: '140px' }}
+                >
+                  <img
+                    src={partner.logo}
+                    alt=""
+                    style={{ maxHeight: '110px', maxWidth: '180px', objectFit: 'contain' }}
+                  />
+                </div>
+              ))}
             </div>
           </div>
-          )}
+
+          {/* Bottom border */}
+          <div className="h-[3px] bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-600 mt-2 mb-8" />
+        </div>
+        )}
+
+
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* New Popular Courses Grid */}
           <div className="mb-20">
