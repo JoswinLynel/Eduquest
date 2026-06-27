@@ -26,11 +26,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="space-y-6">
-            <Link to="/" className="flex items-center space-x-2">
+            <Link to="/" className="inline-block">
               <img
                 src="/logo.png"
                 alt="EduQuest Consultancy"
-                className="h-20 w-auto object-contain brightness-0 invert"
+                className="h-[51px] w-auto object-contain brightness-0 invert"
               />
             </Link>
             <p className="text-gray-400 leading-relaxed">

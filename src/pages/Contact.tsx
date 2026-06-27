@@ -111,9 +111,17 @@ const Contact = () => {
 
   const intakes = [
     'January',
+    'February',
+    'March',
+    'April',
     'May',
+    'June',
+    'July',
+    'August',
     'September',
-    'September/October',
+    'October',
+    'November',
+    'December',
     'Not Sure Yet',
   ];
 
